@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Study flashcards - swipe through your cards">
+  <title>Flashcards — Study</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="top-bar">
+        <a href="index.html" class="back-link" id="back-home">← Home</a>
+        <nav class="nav-links">
+          <a href="add.html" class="nav-pill" id="nav-add">Add</a>
+        </nav>
+      </div>
+      <h1 class="page-title page-title--sm">Study cards</h1>
+    </header>
+
+    <!-- Filter bar -->
+    <div class="filter-bar" id="filter-bar">
+      <select class="form-select form-select--sm" id="view-category">
+        <option value="">All Categories</option>
+        <option value="DBMS">DBMS</option>
+        <option value="SQL">SQL</option>
+        <option value="OOPs">OOPs (Design Patterns)</option>
+        <option value="CN">CN</option>
+        <option value="OS">OS</option>
+        <option value="HLD">HLD</option>
+      </select>
+      <select class="form-select form-select--sm" id="view-subcategory">
+        <option value="">All Sub-Categories</option>
+        <option value="All Concepts">All Concepts</option>
+        <option value="Situations">Situations</option>
+        <option value="Complex Grind">Complex Grind</option>
+      </select>
+    </div>
+
+    <!-- Card counter -->
+    <div class="card-counter" id="card-counter">No cards found</div>
+
+    <!-- Swipe area -->
+    <div class="swipe-area" id="swipe-area">
+      <div class="flashcard" id="flashcard">
+        <div class="flashcard__inner" id="flashcard-inner">
+          <div class="flashcard__front" id="flashcard-front">
+            <span class="flashcard__badge" id="card-badge"></span>
+            <div class="flashcard__text" id="card-question">Select a category to start studying</div>
+            <span class="flashcard__hint">Tap to flip</span>
+          </div>
+          <div class="flashcard__back" id="flashcard-back">
+            <div class="flashcard__text" id="card-answer"></div>
+            <button class="btn btn--icon btn--speak" id="speak-btn" title="Read aloud">🔊</button>
+            <span class="flashcard__hint">Tap to flip back</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls" id="controls" style="display:none;">
+      <button class="btn btn--icon" id="prev-btn" title="Previous card">◀</button>
+      <button class="btn btn--icon btn--danger" id="delete-btn" title="Delete this card">🗑️</button>
+      <button class="btn btn--icon" id="next-btn" title="Next card">▶</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+  <script src="db.js"></script>
+  <script src="view.js"></script>
+</body>
+</html>

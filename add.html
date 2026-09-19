@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Add new flashcards for CS interview preparation">
+  <title>Flashcards — Add Card</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="top-bar">
+        <a href="index.html" class="back-link" id="back-home">← Home</a>
+        <nav class="nav-links">
+          <a href="view.html" class="nav-pill" id="nav-study">Study</a>
+        </nav>
+      </div>
+      <h1 class="page-title page-title--sm">Add a new card</h1>
+    </header>
+
+    <form class="form" id="add-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="category-select">Category</label>
+          <select class="form-select" id="category-select" required>
+            <option value="">Select...</option>
+            <option value="DBMS">DBMS</option>
+            <option value="SQL">SQL</option>
+            <option value="OOPs">OOPs (Design Patterns)</option>
+            <option value="CN">CN</option>
+            <option value="OS">OS</option>
+            <option value="HLD">HLD</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="subcategory-select">Sub-Category</label>
+          <select class="form-select" id="subcategory-select" required>
+            <option value="">Select...</option>
+            <option value="All Concepts">All Concepts</option>
+            <option value="Situations">Situations</option>
+            <option value="Complex Grind">Complex Grind</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Question</label>
+        <div class="editor" id="question-editor">
+          <div class="editor-toolbar">
+            <button type="button" class="editor-toolbar__btn" data-cmd="bold" title="Bold"><b>B</b></button>
+            <button type="button" class="editor-toolbar__btn" data-cmd="italic" title="Italic"><i>I</i></button>
+            <button type="button" class="editor-toolbar__btn" data-cmd="underline" title="Underline"><u>U</u></button>
+            <div class="editor-toolbar__sep"></div>
+            <button type="button" class="editor-toolbar__btn" data-cmd="insertUnorderedList" title="Bullet list">•</button>
+            <button type="button" class="editor-toolbar__btn" data-cmd="insertOrderedList" title="Numbered list">1.</button>
+            <div class="editor-toolbar__sep"></div>
+            <button type="button" class="editor-toolbar__btn" data-cmd="code" title="Inline code">&lt;/&gt;</button>
+          </div>
+          <div class="editor-content" id="question-input" contenteditable="true" data-placeholder="Type your question here..."></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Answer</label>
+        <div class="editor editor--lg" id="answer-editor">
+          <div class="editor-toolbar">
+            <button type="button" class="editor-toolbar__btn" data-cmd="bold" title="Bold"><b>B</b></button>
+            <button type="button" class="editor-toolbar__btn" data-cmd="italic" title="Italic"><i>I</i></button>
+            <button type="button" class="editor-toolbar__btn" data-cmd="underline" title="Underline"><u>U</u></button>
+            <div class="editor-toolbar__sep"></div>
+            <button type="button" class="editor-toolbar__btn" data-cmd="insertUnorderedList" title="Bullet list">•</button>
+            <button type="button" class="editor-toolbar__btn" data-cmd="insertOrderedList" title="Numbered list">1.</button>
+            <div class="editor-toolbar__sep"></div>
+            <button type="button" class="editor-toolbar__btn" data-cmd="code" title="Inline code">&lt;/&gt;</button>
+            <button type="button" class="editor-toolbar__btn" data-cmd="formatBlock-blockquote" title="Quote">❝</button>
+          </div>
+          <div class="editor-content" id="answer-input" contenteditable="true" data-placeholder="Type the answer here..."></div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn--primary" id="save-btn">Save Card</button>
+    </form>
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+  <script src="db.js"></script>
+  <script src="add.js"></script>
+</body>
+</html>

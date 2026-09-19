@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Flashcards app for CS interview preparation - DBMS, SQL, OOPs, CN, OS, HLD">
+  <title>Flashcards</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header class="header header--center">
+      <div class="top-bar">
+        <div class="logo">Flashcards</div>
+        <nav class="nav-links">
+          <a href="add.html" class="nav-pill" id="nav-add">Add</a>
+          <a href="view.html" class="nav-pill" id="nav-study">Study</a>
+        </nav>
+      </div>
+
+      <h1 class="page-title">Master every<br>concept, one card<br>at a time.</h1>
+      <p class="page-subtitle">Your personal CS interview prep — DBMS, SQL, OOPs, CN, OS &amp; HLD.</p>
+    </header>
+
+    <nav class="nav-cards">
+      <a href="add.html" class="nav-card" id="nav-add-card">
+        <div class="nav-card__icon">✏️</div>
+        <div class="nav-card__title">Add Cards</div>
+        <div class="nav-card__desc">Create new flashcards</div>
+      </a>
+      <a href="view.html" class="nav-card" id="nav-view-card">
+        <div class="nav-card__icon">📚</div>
+        <div class="nav-card__title">Study Cards</div>
+        <div class="nav-card__desc">Review &amp; swipe</div>
+      </a>
+    </nav>
+
+    <section class="stats">
+      <div class="stats__label">Your Collection</div>
+      <div class="stats__grid" id="stats-grid"></div>
+    </section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+  <script src="db.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>

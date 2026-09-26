@@ -40,7 +40,17 @@
       <div class="stats__label">Your Collection</div>
       <div class="stats__grid" id="stats-grid"></div>
     </section>
+
+    <section class="stats">
+      <div class="stats__label">Database</div>
+      <div class="db-actions">
+        <span class="db-status" id="db-status">Not connected</span>
+        <button class="btn btn--outline" id="change-db-btn">Change database file</button>
+      </div>
+    </section>
   </div>
+
+  <div class="toast" id="toast"></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
   <script src="db.js"></script>
